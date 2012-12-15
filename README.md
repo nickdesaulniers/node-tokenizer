@@ -4,13 +4,13 @@ A simple tokenizer written in javascript for Node.JS
 ### Example ###
 ```javascript
 var fs = require('fs');
-var parser = require('./parser');
+var tokenizer = require('./tokenizer');
 
-parser.debug = true;
-parser.rule('newline', /^\n/);
-parser.rule('whitespace', /^\s+/);
-parser.rule('word', /^[^\s]+/);
-var tokens = parser.parse(fs.readFileSync('./nick.n', 'utf8'));
+tokenizer.debug = true;
+tokenizer.rule('newline', /^\n/);
+tokenizer.rule('whitespace', /^\s+/);
+tokenizer.rule('word', /^[^\s]+/);
+var tokens = tokenizer.tokenize(fs.readFileSync('./nick.n', 'utf8'));
 
 console.log('Parsed ' + tokens.length + ' tokens');
 ```

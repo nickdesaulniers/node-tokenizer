@@ -30,7 +30,7 @@ exports.rule = function (tokenType, re) {
   });
 }
 
-exports.parse = function (src) {
+exports.tokenize = function (src) {
   source = src;
   if (debugFlag) {
     console.log('-- Starting tokenizer --');
