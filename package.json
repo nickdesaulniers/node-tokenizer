@@ -1,0 +1,24 @@
+{
+  "name": "node-tokenizer",
+  "version": "0.0.0",
+  "description": "A tokenizer written in JavaScript.",
+  "main": "tokenizer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nickdesaulniers/node-tokenizer.git"
+  },
+  "keywords": [
+    "tokenizer",
+    "token",
+    "lex",
+    "lexer",
+    "lexical",
+    "analysis"
+  ],
+  "author": "Nick Desaulniers",
+  "license": "MPL2.0",
+  "readmeFilename": "README.md"
+}
