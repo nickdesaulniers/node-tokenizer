@@ -9,6 +9,8 @@ var tokenizer = require('./tokenizer');
 tokenizer.debug = true;
 tokenizer.rule('newline', /^\n/);
 tokenizer.rule('whitespace', /^\s+/);
+tokenizer.rule('function', /^fn [^\s]+/);
+tokenizer.rule('string', /^\'.+\'/);
 tokenizer.rule('word', /^[^\s]+/);
 var tokens = tokenizer.tokenize(fs.readFileSync('./nick.n', 'utf8'));
 
@@ -25,35 +27,28 @@ fn hello_world
 will output:
 
 ```
-Starting tokenizer --
+-- Starting tokenizer --
 fn hello_world
   puts 'hello world'
 
 --                    --
-word token: fn
-whitespace token:  
-word token: hello_world
+function token: fn hello_world
 newline token: 
 
 whitespace token:   
 word token: puts
 whitespace token:  
-word token: 'hello
-whitespace token:  
-word token: world'
+string token: 'hello world'
 newline token: 
 
 -- Tokenizing complete --
-[ 'fn',
-  ' ',
-  'hello_world',
+[ 'fn hello_world',
   '\n',
   '  ',
   'puts',
   ' ',
-  '\'hello',
-  ' ',
-  'world\'',
+  '\'hello world\'',
   '\n' ]
 --                     --
-Parsed 11 tokens
+Parsed 7 tokens
+```
