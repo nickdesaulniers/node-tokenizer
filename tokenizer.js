@@ -1,4 +1,3 @@
-var regex_queue = [];
 var tokens = [];
 var source = '';
 var regexQueue = [];
@@ -31,6 +30,8 @@ exports.rule = function (tokenType, re) {
 }
 
 exports.tokenize = function (src) {
+  tokens = [];
+  source = '';
   source = src;
   if (debugFlag) {
     console.log('-- Starting tokenizer --');
